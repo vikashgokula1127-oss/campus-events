@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Events</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="college-logo.jpg" alt="Narayana Engineering College logo">
+      <div>
+        <h1>Campus Events</h1>
+        <p>College Events & Activities</p>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#events">Events</a>
+      <a href="#host">Host</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div>
+        <span class="badge">CAMPUS EVENT MANAGEMENT</span>
+        <h2>Discover. Participate. Celebrate.</h2>
+        <p>Find college events, register for activities, and stay connected with campus life.</p>
+        <a class="button" href="#events">View Events</a>
+      </div>
+    </section>
+
+    <section id="events" class="section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">UPCOMING</p>
+          <h2>Campus Events</h2>
+        </div>
+        <span id="eventCount" class="count">0 events</span>
+      </div>
+      <div id="eventsGrid" class="events-grid"></div>
+      <p id="emptyMessage" class="empty">No events available yet. The host can add the first event.</p>
+    </section>
+
+    <section id="host" class="section host-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">HOST PANEL</p>
+          <h2>Create an Event</h2>
+        </div>
+      </div>
+
+      <div class="host-card">
+        <p class="note">
+          This GitHub Pages version stores events in the current browser. For shared host-only
+          management across all students, connect the site to a database/backend.
+        </p>
+
+        <form id="eventForm">
+          <input type="hidden" id="editingId">
+
+          <div class="form-grid">
+            <label>
+              Event Name
+              <input id="eventName" required placeholder="e.g. Tech Fest 2026">
+            </label>
+
+            <label>
+              Date
+              <input id="eventDate" type="date" required>
+            </label>
+
+            <label>
+              Time
+              <input id="eventTime" type="time" required>
+            </label>
+
+            <label>
+              Venue
+              <input id="eventVenue" required placeholder="e.g. Seminar Hall">
+            </label>
+          </div>
+
+          <label>
+            Description
+            <textarea id="eventDescription" rows="4" required placeholder="Write a short description..."></textarea>
+          </label>
+
+          <label>
+            Event Image
+            <input id="eventImage" type="file" accept="image/*">
+          </label>
+
+          <div class="form-actions">
+            <button class="button" type="submit" id="submitButton">Create Event</button>
+            <button class="button secondary hidden" type="button" id="cancelEdit">Cancel Edit</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <p class="eyebrow">ABOUT</p>
+      <h2>Campus Events</h2>
+      <p>A simple platform for sharing and participating in college events and activities.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Campus Events • Narayana Engineering College (Autonomous), Nellore</p>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
